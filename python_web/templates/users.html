@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Users</h2>
+  <a href="/users/add">Add user</a>
+  <ul>
+    {% for u in users %}
+      <li>{{ u.username }} ({{ u.role }})
+        <form style="display:inline" method="post" action="/users/delete/{{ u.username }}"><button type="submit">Delete</button></form>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

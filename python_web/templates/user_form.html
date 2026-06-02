@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Create User</h2>
+  <form method="post">
+    <label>Username<br><input name="username" required></label><br>
+    <label>Password<br><input name="password" required type="password"></label><br>
+    <label>Role<br><select name="role"><option value="user">User</option><option value="admin">Admin</option></select></label><br>
+    <button type="submit">Create</button>
+  </form>
+{% endblock %}

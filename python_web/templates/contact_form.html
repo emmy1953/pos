@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>{{ action }} Contact</h2>
+  <form method="post">
+    <label>First name<br><input name="first_name" value="{{ contact.first_name|default('') }}" required></label><br>
+    <label>Last name<br><input name="last_name" value="{{ contact.last_name|default('') }}" required></label><br>
+    <label>Phone<br><input name="phone" value="{{ contact.phone|default('') }}"></label><br>
+    <label>Email<br><input name="email" value="{{ contact.email|default('') }}"></label><br>
+    <label>Address<br><input name="address" value="{{ contact.address|default('') }}"></label><br>
+    <label>Notes<br><textarea name="notes">{{ contact.notes|default('') }}</textarea></label><br>
+    <button type="submit">{{ action }}</button>
+  </form>
+{% endblock %}

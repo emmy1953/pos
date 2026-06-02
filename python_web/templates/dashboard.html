@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Dashboard</h2>
+  <p>Contacts stored: {{ count }}</p>
+  <ul>
+    <li><a href="/contacts">View contacts</a></li>
+    <li><a href="/contacts/add">Add contact</a></li>
+    <li><a href="/contacts/import">Import CSV</a></li>
+    <li><a href="/contacts/export">Export CSV</a></li>
+    {% if user.role == 'admin' %}
+    <li><a href="/users">Manage users</a></li>
+    {% endif %}
+  </ul>
+{% endblock %}
